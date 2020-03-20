@@ -5,5 +5,15 @@
   "main": "index.js",
   "repository": "git@github.com:lwrooblewski/github_api.git",
   "author": "lwrooblewski <l.wrooblewski@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.9.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.20",
+    "webpack-cli": "^3.3.11"
+  }
 }
