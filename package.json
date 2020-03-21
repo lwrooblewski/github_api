@@ -9,15 +9,17 @@
   "scripts": {
     "commit": "git-cz",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server --config webpack.config.js",
-    "lint": "eslint src -c .eslintrc.json --ext js,jsx",
+    "dev": "webpack-dashboard -- webpack-dev-server --config webpack.config.js",
+    "lint:eslint": "eslint src -c .eslintrc.json --ext js,jsx",
+    "lint:stylelint": "stylelint",
     "prettify": "prettier --write src/*",
     "pretty-quick": "pretty-quick --pattern './src/*' --staged",
     "husky-pre-commit": "yarn run pretty-quick && staged && lint-staged"
   },
   "lint-staged": {
     "*.(js|jsx)": [
-      "yarn run lint"
+      "yarn run lint:eslint",
+      "yarn run lint:stylelint"
     ]
   },
   "husky": {
@@ -33,6 +35,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.1",
+    "@emotion/core": "^10.0.28",
     "babel-loader": "^8.1.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "3.1.0",
@@ -51,8 +54,11 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "react-hot-loader": "^4.12.20",
+    "stylelint": "^13.2.1",
+    "stylelint-config-standard": "^20.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
+    "webpack-dashboard": "^3.2.0",
     "webpack-dev-server": "^3.10.3"
   },
   "config": {
