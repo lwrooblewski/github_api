@@ -9,4 +9,4 @@ jobs:
     - name: yarn install
       run: yarn
     - name: build app
-        run: yarn run build
+      run: yarn run build
