@@ -8,7 +8,7 @@
   "license": "MIT",
   "engines": {
     "yarn": "1.22.4",
-    "node": "13.11.0"
+    "node": ">=12.14.0"
   },
   "scripts": {
     "commit": "git-cz",
