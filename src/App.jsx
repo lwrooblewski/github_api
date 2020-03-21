@@ -1,5 +1,12 @@
 import React from 'react';
 
-const App = () => <div>Lorem ipsum</div>;
+import { ThemeProvider } from './providers';
+import AppContent from './components/AppContent';
+
+const App = () => (
+  <ThemeProvider>
+    <AppContent />
+  </ThemeProvider>
+);
 
 export default App;
