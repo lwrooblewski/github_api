@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 const title = 'Lorem ipsum';
 
-ReactDOM.render(
-<div>{title}</div>,
-document.getElementById('app')
-);
+ReactDOM.render(<div>{title}</div>, document.getElementById('app'));
 
 module.hot.accept();
