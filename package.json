@@ -12,7 +12,8 @@
     "dev": "webpack-dev-server --config webpack.config.js",
     "lint": "eslint src -c .eslintrc.json --ext js,jsx",
     "prettify": "prettier --write src/*",
-    "husky-pre-commit": "pretty-quick --staged && lint-staged"
+    "pretty-quick": "pretty-quick --pattern './src/*' --staged",
+    "husky-pre-commit": "yarn run pretty-quick && staged && lint-staged"
   },
   "lint-staged": {
     "*.(js|jsx)": [
