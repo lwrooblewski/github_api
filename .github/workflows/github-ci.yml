@@ -10,3 +10,9 @@ jobs:
       run: yarn
     - name: build app
       run: yarn run build
+    - name: add remote origin
+        run: |
+          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+    - name: deploy to Heroku
+        run: |
+          git push heroku HEAD:master -f
