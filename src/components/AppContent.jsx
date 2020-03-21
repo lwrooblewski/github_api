@@ -1,17 +1,10 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import { Container } from 'react-bootstrap';
 import { css, Global } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
+import { childrenType } from '../types';
 
-const Container = styled.div`
-  width: 100%;
-  max-width: 800px;
-  height: 100%;
-  max-height: 100%;
-  background-color: ${props => props.background};
-`;
-
-function AppContent() {
+function AppContent({ children }) {
   const theme = useTheme();
   return (
     <>
@@ -19,14 +12,22 @@ function AppContent() {
         styles={css`
           html,
           body {
+            height: 100%;
+            width: 100%;
             margin: 0;
-            background-color: ${theme.colors.primary};
+            background-color: ${theme.colors.background};
+            display: flex;
+            justify-content: center;
           }
 `}
       />
-      <Container background={theme.colors.secondary}>Lorem ipsum</Container>
+      <Container>{children}</Container>
     </>
   );
 }
+
+AppContent.propTypes = {
+  ...childrenType,
+};
 
 export default AppContent;
