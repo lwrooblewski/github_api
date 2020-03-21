@@ -1,8 +1,7 @@
-import React from 'react';
+import { createElement } from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
-const title = 'Lorem ipsum';
-
-ReactDOM.render(<div>{title}</div>, document.getElementById('app'));
+ReactDOM.render(createElement(App), document.getElementById('app'));
 
 module.hot.accept();
