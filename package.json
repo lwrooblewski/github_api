@@ -6,10 +6,6 @@
   "repository": "git@github.com:lwrooblewski/github_api.git",
   "author": "lwrooblewski <l.wrooblewski@gmail.com>",
   "license": "MIT",
-  "engines": {
-    "yarn": "1.22.4",
-    "node": ">=12.14.0"
-  },
   "scripts": {
     "commit": "git-cz",
     "build": "webpack --config webpack.config.js",
