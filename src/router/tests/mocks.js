@@ -1,6 +1,6 @@
-import { Home, Users } from './pages';
+import { Home, Users } from '../../pages';
 
-const routes = {
+export const routesMock = {
 	root: {
 		name: 'Home',
 		url: '/',
@@ -27,4 +27,9 @@ const routes = {
 	},
 };
 
-export default routes;
+export const routesWithComponentsToRender = [
+	{ component: Home, key: 'root', url: '/' },
+	{ component: Users.List, key: 'usersList', url: '/users' },
+	{ component: Users.Search, key: 'searchUser', url: '/search' },
+	{ component: Users.Single, key: 'singleUser', url: '/single/:id' },
+];
