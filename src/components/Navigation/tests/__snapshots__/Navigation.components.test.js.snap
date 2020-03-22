@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.emotion-0 {
+  margin-top: 100px;
+}
+
+.emotion-0 {
+  margin-top: 100px;
+}
+
+<div
+  className="emotion-0"
+>
+  <div
+    className="nav nav-tabs nav-fill"
+    onKeyDown={[Function]}
+  >
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link active"
+        data-rb-event-key="/"
+        href="/"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Home
+      </a>
+    </div>
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key="/users"
+        href="/users"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        GitHub users
+      </a>
+    </div>
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key="/search"
+        href="/search"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Search for user
+      </a>
+    </div>
+  </div>
+</div>
+`;
