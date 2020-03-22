@@ -16,6 +16,7 @@
 		"prettify:staged": "pretty-quick --staged",
 		"husky-pre-commit": "yarn run prettify:staged && lint-staged",
 		"test:all": "jest",
+		"test:changed": "jest --onlyChanged",
 		"test:all:withCoverage": "jest --coverage",
 		"test:updateSnapshots": "jest --updateSnapshot"
 	},

@@ -1,4 +1,4 @@
-import { Home, Users } from '../../pages';
+import { Home, UsersSearch, UsersSingle, UsersList } from '../../pages';
 
 export const routesMock = {
 	root: {
@@ -10,26 +10,27 @@ export const routesMock = {
 	usersList: {
 		name: 'GitHub users',
 		url: '/users',
-		component: Users.List,
+		component: UsersList,
 		displayInNavigation: true,
 	},
 	searchUser: {
 		name: 'Search for user',
 		url: '/search',
-		component: Users.Search,
+		component: UsersSearch,
 		displayInNavigation: true,
 	},
 	singleUser: {
 		name: 'Single user',
 		url: '/single/:id',
-		component: Users.Single,
+		component: UsersSingle,
 		displayInNavigation: false,
 	},
 };
-
 export const routesWithComponentsToRender = [
 	{ component: Home, key: 'root', url: '/' },
-	{ component: Users.List, key: 'usersList', url: '/users' },
-	{ component: Users.Search, key: 'searchUser', url: '/search' },
-	{ component: Users.Single, key: 'singleUser', url: '/single/:id' },
+	{ component: UsersList, key: 'usersList', url: '/users' },
+	{ component: UsersSearch, key: 'searchUser', url: '/search' },
+	{ component: UsersSingle, key: 'singleUser', url: '/single/:id' },
 ];
+
+export const linkWithParams = '/some/link/:someParam';

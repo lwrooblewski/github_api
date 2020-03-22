@@ -1,4 +1,4 @@
-import { Home, Users } from '../pages';
+import { Home, UsersSearch, UsersSingle, UsersList } from '../pages';
 
 const routes = {
 	root: {
@@ -10,19 +10,19 @@ const routes = {
 	usersList: {
 		name: 'GitHub users',
 		url: '/users',
-		component: Users.List,
+		component: UsersList,
 		displayInNavigation: true,
 	},
 	searchUser: {
 		name: 'Search for user',
 		url: '/search',
-		component: Users.Search,
+		component: UsersSearch,
 		displayInNavigation: true,
 	},
 	singleUser: {
 		name: 'Single user',
 		url: '/single/:id',
-		component: Users.Single,
+		component: UsersSingle,
 		displayInNavigation: false,
 	},
 };

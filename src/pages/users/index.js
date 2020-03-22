@@ -1,11 +1,3 @@
-import UsersList from './UsersList';
-import UsersSearch from './UsersSearch';
-import UsersSingle from './UsersSingle';
-
-const Users = {
-	List: UsersList,
-	Search: UsersSearch,
-	Single: UsersSingle,
-};
-
-export default Users;
+export { default as UsersSingle } from './UsersSingle';
+export { default as UsersList } from './UsersList';
+export { default as UsersSearch } from './UsersSearch';

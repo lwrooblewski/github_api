@@ -1,2 +1,2 @@
 export { default as Home } from './Home';
-export { default as Users } from './users';
+export { UsersList, UsersSingle, UsersSearch } from './users';
