@@ -1,10 +1,12 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
+import { Link } from '@reach/router';
 import { useTheme } from 'emotion-theming';
 import { Avatar, UserDataCol, Login } from './UserRow.components';
 import userRowPropTypes from '../../types/components/UserRow';
+import { createLinkAddress } from '../../router/Router.actions';
 
-function UserRow({ avatarUrl, login }) {
+function UserRow({ avatarUrl, login, singleUserRoute }) {
 	const theme = useTheme();
 	return (
 		<Row>
@@ -13,6 +15,15 @@ function UserRow({ avatarUrl, login }) {
 			</UserDataCol>
 			<UserDataCol>
 				<Login theme={theme}>{login}</Login>
+			</UserDataCol>
+			<UserDataCol>
+				<Link
+					to={createLinkAddress(singleUserRoute, {
+						id: login,
+					})}
+				>
+					See details
+				</Link>
 			</UserDataCol>
 		</Row>
 	);

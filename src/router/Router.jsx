@@ -9,7 +9,7 @@ function Router() {
 		<ReachRouter>
 			{routesArray.map(({ component, url, key }) => {
 				const Component = component;
-				return <Component path={url} key={key} />;
+				return <Component path={url} key={key} routes={routes} />;
 			})}
 		</ReachRouter>
 	);
