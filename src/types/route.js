@@ -1,8 +1,10 @@
-import { shape, string } from 'prop-types';
+import { shape, string, elementType, bool } from 'prop-types';
 
 const route = shape({
 	name: string.isRequired,
 	url: string.isRequired,
+	component: elementType.isRequired,
+	displayInNavigation: bool.isRequired,
 });
 
 export default route;
