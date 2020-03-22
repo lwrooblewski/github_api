@@ -20,11 +20,10 @@ exports[`renders correctly 1`] = `
       className="nav-item"
     >
       <a
+        aria-current="page"
         className="nav-link active"
-        data-rb-event-key="/"
         href="/"
         onClick={[Function]}
-        onKeyDown={[Function]}
       >
         Home
       </a>
@@ -33,11 +32,9 @@ exports[`renders correctly 1`] = `
       className="nav-item"
     >
       <a
-        className="nav-link"
-        data-rb-event-key="/users"
+        className="nav-link "
         href="/users"
         onClick={[Function]}
-        onKeyDown={[Function]}
       >
         GitHub users
       </a>
@@ -46,11 +43,9 @@ exports[`renders correctly 1`] = `
       className="nav-item"
     >
       <a
-        className="nav-link"
-        data-rb-event-key="/search"
+        className="nav-link "
         href="/search"
         onClick={[Function]}
-        onKeyDown={[Function]}
       >
         Search for user
       </a>
