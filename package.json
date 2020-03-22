@@ -1,76 +1,89 @@
 {
-  "name": "github_api",
-  "version": "1.0.0",
-  "description": "Example project to prove skills",
-  "main": "index.js",
-  "repository": "git@github.com:lwrooblewski/github_api.git",
-  "author": "lwrooblewski <l.wrooblewski@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "commit": "git-cz",
-    "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dashboard -- webpack-dev-server --config webpack.config.js",
-    "lint:eslint": "eslint src -c .eslintrc.json --ext js,jsx",
-    "lint:stylelint": "stylelint",
-    "prettify": "prettier --write src/*",
-    "prettify:staged": "pretty-quick --staged",
-    "husky-pre-commit": "yarn run prettify:staged && lint-staged"
-  },
-  "lint-staged": {
-    "*.(js|jsx)": [
-      "yarn run lint:eslint",
-      "yarn run lint:stylelint --fix"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run husky-pre-commit"
-    }
-  },
-  "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "bootstrap": "^4.4.1",
-    "emotion-theming": "^10.0.27",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.0-beta.17",
-    "react-dom": "^16.13.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-react": "^7.9.1",
-    "babel-loader": "^8.1.0",
-    "commitizen": "^4.0.3",
-    "css-loader": "^3.4.2",
-    "cz-conventional-changelog": "3.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-import-resolver-webpack": "^0.12.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
-    "html-loader": "^1.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1",
-    "react-hot-loader": "^4.12.20",
-    "style-loader": "^1.1.3",
-    "stylelint": "^13.2.1",
-    "stylelint-config-standard": "^20.0.0",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dashboard": "^3.2.0",
-    "webpack-dev-server": "^3.10.3"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+	"name": "github_api",
+	"version": "1.0.0",
+	"description": "Example project to prove skills",
+	"main": "index.js",
+	"repository": "git@github.com:lwrooblewski/github_api.git",
+	"author": "lwrooblewski <l.wrooblewski@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"commit": "git-cz",
+		"build": "webpack --config webpack.config.js",
+		"dev": "webpack-dashboard -- webpack-dev-server --config webpack.config.js",
+		"lint:eslint": "eslint src -c .eslintrc.json --ext js,jsx",
+		"lint:stylelint": "stylelint",
+		"prettify": "prettier --write",
+		"prettify:staged": "pretty-quick --staged",
+		"husky-pre-commit": "yarn run prettify:staged && lint-staged",
+		"test:all": "jest",
+		"test:all:withCoverage": "jest --coverage",
+		"test:updateSnapshots": "jest --updateSnapshot"
+	},
+	"lint-staged": {
+		"*.(js|jsx)": [
+			"yarn run lint:eslint --fix",
+			"yarn run lint:eslint",
+			"yarn run lint:stylelint --fix"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn run husky-pre-commit"
+		}
+	},
+	"dependencies": {
+		"@emotion/core": "^10.0.28",
+		"@emotion/styled": "^10.0.27",
+		"@reach/router": "^1.3.3",
+		"bootstrap": "^4.4.1",
+		"emotion": "^10.0.27",
+		"emotion-theming": "^10.0.27",
+		"prop-types": "^15.7.2",
+		"react": "^16.13.1",
+		"react-bootstrap": "^1.0.0-beta.17",
+		"react-dom": "^16.13.1",
+		"@testing-library/jest-dom": "^5.1.1",
+		"jest-emotion": "^10.0.32"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/preset-env": "^7.9.0",
+		"@babel/preset-react": "^7.9.1",
+		"@testing-library/react": "^10.0.1",
+		"babel-jest": "^25.1.0",
+		"babel-loader": "^8.1.0",
+		"commitizen": "^4.0.3",
+		"css-loader": "^3.4.2",
+		"cz-conventional-changelog": "3.1.0",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb": "^18.1.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-import-resolver-webpack": "^0.12.1",
+		"eslint-plugin-import": "^2.20.1",
+		"eslint-plugin-jest": "^23.8.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-react": "^7.19.0",
+		"html-loader": "^1.0.0",
+		"html-webpack-plugin": "^3.2.0",
+		"husky": "^4.2.3",
+		"jest": "^25.1.0",
+		"lint-staged": "^10.0.8",
+		"prettier": "^1.19.1",
+		"pretty-quick": "^2.0.1",
+		"react-hot-loader": "^4.12.20",
+		"react-test-renderer": "^16.13.1",
+		"style-loader": "^1.1.3",
+		"stylelint": "^13.2.1",
+		"stylelint-config-standard": "^20.0.0",
+		"webpack": "^4.42.0",
+		"webpack-cli": "^3.3.11",
+		"webpack-dashboard": "^3.2.0",
+		"webpack-dev-server": "^3.10.3"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
 }

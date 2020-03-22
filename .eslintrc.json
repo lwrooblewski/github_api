@@ -1,24 +1,25 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react", "plugin:prettier/recommended"],
-  "plugins": ["react", "prettier"],
-  "rules": {
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js", "jsx"]
-      }
-    ],
-    "prettier/prettier": "error",
-    "max-len": ["error", 170]
-  },
-  "env": {
-    "browser": true
-  },
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "./webpack.config.js"
-      }
-    }
-  }
+	"extends": ["airbnb", "prettier", "prettier/react", "plugin:prettier/recommended"],
+	"plugins": ["react", "prettier", "jest"],
+	"rules": {
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [".js", "jsx"]
+			}
+		],
+		"prettier/prettier": "error",
+		"max-len": ["error", 170]
+	},
+	"env": {
+		"browser": true,
+		"jest/globals": true
+	},
+	"settings": {
+		"import/resolver": {
+			"webpack": {
+				"config": "./webpack.config.js"
+			}
+		}
+	}
 }

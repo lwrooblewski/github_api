@@ -7,11 +7,11 @@ import { childrenType } from '../types';
 import Navigation from './Navigation/Navigation';
 
 function AppContent({ children }) {
-  const theme = useTheme();
-  return (
-    <>
-      <Global
-        styles={css`
+	const theme = useTheme();
+	return (
+		<>
+			<Global
+				styles={css`
           html,
           body {
             height: 100%;
@@ -22,15 +22,15 @@ function AppContent({ children }) {
             justify-content: center;
           }
 `}
-      />
-      <Navigation routes={routes} />
-      <Container>{children}</Container>
-    </>
-  );
+			/>
+			<Navigation routes={routes} />
+			<Container>{children}</Container>
+		</>
+	);
 }
 
 AppContent.propTypes = {
-  ...childrenType,
+	...childrenType,
 };
 
 export default AppContent;

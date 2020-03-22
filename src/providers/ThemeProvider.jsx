@@ -6,19 +6,19 @@ import { colors } from '../utils/views';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const theme = {
-  colors: {
-    primary: colors.ebb,
-    secondary: colors.hintOfRed,
-    info: colors.linkWater,
-    background: colors.white,
-  },
+	colors: {
+		primary: colors.ebb,
+		secondary: colors.hintOfRed,
+		info: colors.linkWater,
+		background: colors.white,
+	},
 };
 const ThemeProvider = ({ children }) => {
-  return <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>;
+	return <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>;
 };
 
 ThemeProvider.propTypes = {
-  ...childrenType,
+	...childrenType,
 };
 
 export default ThemeProvider;
