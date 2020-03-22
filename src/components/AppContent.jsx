@@ -2,7 +2,9 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { css, Global } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
+import routes from '@root/routes';
 import { childrenType } from '../types';
+import Navigation from './Navigation/Navigation';
 
 function AppContent({ children }) {
   const theme = useTheme();
@@ -21,6 +23,7 @@ function AppContent({ children }) {
           }
 `}
       />
+      <Navigation routes={routes} />
       <Container>{children}</Container>
     </>
   );
