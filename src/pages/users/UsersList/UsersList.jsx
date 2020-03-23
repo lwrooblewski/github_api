@@ -1,18 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import UserRow from '../../components/UserRow/UserRow';
-import { routesType } from '../../types';
-import { requestUsersFetch } from '../../store/actions';
+import { onUserListRender } from '@root/pages/users/UsersList/UsersList.actions';
+import UserRow from '../../../components/UserRow/UserRow';
+import { routesType } from '../../../types';
 
 function UsersList({ routes }) {
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(
-			requestUsersFetch({
-				since: 0,
-			}),
-		);
+		onUserListRender(dispatch);
 	}, []);
+
 	return (
 		<div>
 			<UserRow

@@ -1,10 +1,8 @@
 export const REQUEST_USERS_FETCH = 'REQUEST-USERS-FETCH';
-export function requestUsersFetch({ since }) {
+export function requestUsersFetch() {
 	return {
 		type: REQUEST_USERS_FETCH,
-		payload: {
-			since,
-		},
+		payload: {},
 	};
 }
 
@@ -19,7 +17,7 @@ export function requestUsersFetchSucceeded({ users }) {
 }
 
 export const REQUEST_USERS_FETCH_FAILED = 'REQUEST-USERS-FETCH-FAILED';
-export function requestUsersFetchFailed(error) {
+export function requestUsersFetchFailed({ error }) {
 	return {
 		type: REQUEST_USERS_FETCH_FAILED,
 		payload: {
