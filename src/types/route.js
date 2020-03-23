@@ -5,6 +5,6 @@ const route = shape({
 	url: string.isRequired,
 	component: elementType.isRequired,
 	displayInNavigation: bool.isRequired,
-});
+}).isRequired;
 
 export default route;

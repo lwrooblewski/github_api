@@ -1,20 +1,29 @@
-const REQUEST_USERS_FETCH = 'REQUEST-USERS-FETCH';
-export function requestUsersFetch({ page, perPage }) {
+export const REQUEST_USERS_FETCH = 'REQUEST-USERS-FETCH';
+export function requestUsersFetch({ since }) {
 	return {
 		type: REQUEST_USERS_FETCH,
 		payload: {
-			page,
-			perPage,
+			since,
 		},
 	};
 }
 
-const REQUEST_USERS_FETCH_SUCCEEDED = 'REQUEST-USERS-FETCH-SUCCEEDED';
+export const REQUEST_USERS_FETCH_SUCCEEDED = 'REQUEST-USERS-FETCH-SUCCEEDED';
 export function requestUsersFetchSucceeded({ users }) {
 	return {
 		type: REQUEST_USERS_FETCH_SUCCEEDED,
 		payload: {
 			users,
+		},
+	};
+}
+
+export const REQUEST_USERS_FETCH_FAILED = 'REQUEST-USERS-FETCH-FAILED';
+export function requestUsersFetchFailed(error) {
+	return {
+		type: REQUEST_USERS_FETCH_FAILED,
+		payload: {
+			error,
 		},
 	};
 }

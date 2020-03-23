@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+require('regenerator-runtime/runtime');
 
 module.exports = {
 	entry: './src/index.js',
