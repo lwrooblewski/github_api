@@ -4,8 +4,29 @@ module.exports = {
 	transform: {
 		'^.+\\.(js|jsx)$': 'babel-jest',
 	},
-	collectCoverageFrom: ['src/**/*.{js,jsx}'],
-	testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+	collectCoverageFrom: [
+		'**/*.{js,jsx}',
+		'!**/node_modules/**',
+		'!**/dist/**',
+		'!**/coverage/**',
+		'!**/*.config.*',
+		'!**/mocks/**',
+		'!**/store/(index|sagas|reducers).js', // we shouldnt test if framework works
+		'!**/src/components/AppContent.jsx', // returns just content container, nothing to test
+		'!**/src/App.jsx', // returns react rendering, nothing to test
+		'!**/src/index.js', // returns react rendering, nothing to test
+		'!**/src/utils/views/**', // dictionaries, nothing to test
+		'!**/src/providers/ThemeProvider.jsx', // returns emotion theme provider, nothing to test
+	],
+	testPathIgnorePatterns: [
+		'/node_modules/',
+		'/dist/',
+		'src/App.jsx', // returns react rendering, nothing to test
+		'src/index.js', // returns react rendering, nothing to test
+		'src/utils/views', // dictionaries, nothing to test
+		'src/providers/ThemeProvider.jsx', // returns emotion theme provider, nothing to test
+	],
+	coverageReporters: ['json-summary', 'text', 'lcov'],
 	moduleFileExtensions: ['js', 'jsx'],
 	moduleDirectories: ['node_modules'],
 	modulePaths: ['node_modules'],
