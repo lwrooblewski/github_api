@@ -13,15 +13,15 @@ function Router({ children }) {
 	const routesArray = getRoutesArray(routes);
 	return (
 		<BrowserRouter>
-			<Switch>
-				<Container>
-					{children}
+			<Container>
+				{children}
+				<Switch>
 					{routesArray.map(({ component, url, key, exact = false }) => {
 						const Component = component;
-						return (<Route path={url} exact={exact}><Component key={key} routes={routes}/></Route>);
+						return (<Route path={url} exact={exact} key={key} ><Component routes={routes}/></Route>);
 					})}
-				</Container>
-			</Switch>
+				</Switch>
+			</Container>
 		</BrowserRouter>
 	);
 }
