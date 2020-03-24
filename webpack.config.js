@@ -60,6 +60,8 @@ module.exports = {
 	],
 	devServer: {
 		contentBase: './dist',
+		publicPath: '/',
+		historyApiFallback: true,
 		hot: true,
 		compress: true,
 		port: 9000,
