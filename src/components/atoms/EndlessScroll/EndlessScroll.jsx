@@ -7,7 +7,6 @@ import {useIntersectionObserver} from '@root/utils/hooks/useIntersectionObserver
 
 export default function EndlessScroll({ children, onScrolledToEnd = () => {} }) {
 	const loadingRef = useRef();
-	// const shouldLoadMore = useIntersectionObserver({ callback: onScrolledToEnd, target: loadingRef.current });
 	const inView = useIntersectionObserver(loadingRef);
 	useEffect(() => {
 		if (inView) onScrolledToEnd();

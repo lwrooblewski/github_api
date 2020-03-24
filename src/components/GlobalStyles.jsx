@@ -16,6 +16,9 @@ export default function GlobalStyles(){
 						display: flex;
 						justify-content: center;
 					}
+					#app {
+					    width: 100%;
+					}
 				`}
         />
     )

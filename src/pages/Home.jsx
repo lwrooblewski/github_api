@@ -1,8 +1,13 @@
 import React from 'react';
-import Loading from '@root/components/atoms/Loading/Loading';
+import { Redirect } from 'react-router-dom';
+import {routesType} from "@root/types";
 
-function Home() {
-	return <Loading />;
+function Home({ routes }) {
+	return <Redirect to={routes.usersList.url} />;
 }
+
+Home.propTypes = {
+	routes: routesType,
+};
 
 export default Home;
