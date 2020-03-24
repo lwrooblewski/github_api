@@ -14,4 +14,11 @@ export const usersInStoreAmountSelector = createSelector(selectUsers, (items) =>
 	return items.size;
 });
 
-export const fetchedUsers = createSelector(selectUsers, (items) => items);
+
+export const selectSingleUsersCache = (state) => {
+	return state.get(subStores.singleUsersCache, List());
+};
+
+export const selectSingleUserFromCache = (username) => createSelector(selectSingleUsersCache, (items) => {
+	return items.get(username);
+});
