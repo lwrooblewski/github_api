@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import { useParams } from "@reach/router";
-import { Row, Col } from 'react-bootstrap';
+import { useParams } from "react-router-dom";
+import { Col } from 'react-bootstrap';
 import {useDispatch, useSelector} from "react-redux";
 import Avatar from "@root/components/atoms/Avatar";
 import {fetchSingleUserData, getUserDataRowsReadyToRender} from "./UsersSingle.actions";

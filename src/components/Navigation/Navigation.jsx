@@ -1,12 +1,12 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
-import { Link, useMatch } from '@reach/router';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { NavigationContainer } from './Navigation.components';
 import { routesType } from '../../types';
 import { getArrayOfNavigationLinks, getRootUrl } from './Navigation.actions';
 
 function Navigation({ routes }) {
-	const isLinkActive = (url) => useMatch(url);
+	const isLinkActive = (url) => useRouteMatch(url);
 	return (
 		<NavigationContainer>
 			<Nav fill variant="tabs" defaultActiveKey={getRootUrl(routes)}>

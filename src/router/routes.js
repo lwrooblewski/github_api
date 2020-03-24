@@ -5,7 +5,8 @@ const routes = {
 		name: 'Home',
 		url: '/',
 		component: Home,
-		displayInNavigation: true,
+		displayInNavigation: false,
+		exact: true,
 	},
 	usersList: {
 		name: 'GitHub users',

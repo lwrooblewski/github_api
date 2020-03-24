@@ -1,15 +1,17 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { LocationProvider } from '@reach/router';
+import {
+	BrowserRouter,
+} from "react-router-dom";
 import Navigation from '../Navigation';
 import routes from '../../../router/routes';
 
 it('renders correctly', () => {
 	const tree = renderer
 		.create(
-			<LocationProvider>
+			<BrowserRouter>
 				<Navigation routes={routes} />
-			</LocationProvider>,
+			</BrowserRouter>,
 		)
 		.toJSON();
 	expect(tree).toMatchSnapshot();

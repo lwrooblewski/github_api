@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 import { useTheme } from 'emotion-theming';
 import Avatar from "@root/components/atoms/Avatar";
 import { UserDataCol, Login, UserRowContainer } from './UserRow.components';
