@@ -2,5 +2,6 @@
 import styled from '@emotion/styled';
 
 export const NavigationContainer = styled.div`
-	margin-top: 100px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 `;

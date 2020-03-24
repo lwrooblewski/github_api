@@ -1,8 +1,14 @@
 import React, { forwardRef } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { refType } from '@root/types';
+import { LoadingContainer } from './Loading.components';
 
 const Loading = forwardRef((props, ref) => {
-	return <span ref={ref}>Loading...</span>;
+	return (
+		<LoadingContainer>
+			<Spinner animation="border" variant="primary" ref={ref} />
+		</LoadingContainer>
+	);
 });
 
 Loading.propTypes = {

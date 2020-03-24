@@ -1,14 +1,18 @@
 import { requestUsersFetch } from '@root/store/actions';
 import { createLinkAddress } from '@root/router/Router.actions';
 
-export function onUserListRender(dispatch, usersAmount) {
-	if (usersAmount === 0 || !usersAmount) {
-		fetchInitialUsers(dispatch);
-	}
-}
-
 export function fetchInitialUsers(dispatch) {
 	dispatch(requestUsersFetch());
+}
+
+export function fetchNewUsersPage(dispatch) {
+	fetchInitialUsers(dispatch);
+}
+
+export function onUserListRender(dispatch, usersAmount) {
+	if (usersAmount === 0 || !usersAmount) {
+		fetchNewUsersPage(dispatch);
+	}
 }
 
 export function getUsersRowsReadyToRender({ fetchedUsers, routes }) {
