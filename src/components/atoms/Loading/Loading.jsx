@@ -11,8 +11,4 @@ const Loading = forwardRef((props, ref) => {
 	);
 });
 
-Loading.propTypes = {
-	ref: refType,
-};
-
 export default Loading;

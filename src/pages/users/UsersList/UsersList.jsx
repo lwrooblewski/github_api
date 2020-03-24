@@ -33,7 +33,7 @@ function UsersList({ routes }) {
 }
 
 UsersList.propTypes = {
-	...routesType,
+	routes: routesType,
 };
 
 export default UsersList;
