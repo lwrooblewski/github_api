@@ -20,7 +20,7 @@ export function getUsersRowsReadyToRender({ fetchedUsers, routes }) {
 		return {
 			id: user.get('id'),
 			avatarUrl: user.get('avatar_url'),
-			login: user.get('login'),
+			username: user.get('login'),
 			singleUserRoute: createLinkAddress(routes.singleUser.url, { id: user.get('login') }),
 		};
 	});

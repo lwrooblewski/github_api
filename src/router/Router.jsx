@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router as ReachRouter } from '@reach/router';
+import { Router as ReachRouter, createHistory } from '@reach/router';
 import routes from './routes';
 import { getRoutesArray } from './Router.actions';
 

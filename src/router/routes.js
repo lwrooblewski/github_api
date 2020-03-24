@@ -21,7 +21,7 @@ const routes = {
 	},
 	singleUser: {
 		name: 'Single user',
-		url: '/single/:id',
+		url: '/single/:username',
 		component: UsersSingle,
 		displayInNavigation: false,
 	},
