@@ -1,4 +1,4 @@
-import { number, oneOfType, string } from 'prop-types';
+import { string } from 'prop-types';
 
 const userRowPropTypes = {
 	avatarUrl: string,
