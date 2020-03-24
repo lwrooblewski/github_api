@@ -1,12 +1,27 @@
-import PropTypes from 'prop-types';
+import { useState, useEffect } from "react"
 
-export default function useIntersectionObserver({ callback }) {
-	return new IntersectionObserver(function(entries) {
-		if (entries[0].intersectionRatio <= 0) return;
-		callback(entries);
+export const useIntersectionObserver = (
+	ref,
+	{ threshold = 0, root = null, rootMargin = '0%'} = {}
+) => {
+	const [inView, setInView] = useState(false);
+	const observer = new IntersectionObserver(
+		([entry], observerInstance) => {
+			if (!entry) return;
+			setInView(entry.intersectionRatio > 0);
+		},
+		{
+			threshold,
+			root,
+			rootMargin,
+		}
+	);
+
+	useEffect(() => {
+		if (ref.current) {
+			observer.observe(ref.current)
+		}
 	});
-}
 
-useIntersectionObserver.propTypes = {
-	callback: PropTypes.func,
+	return inView;
 };
