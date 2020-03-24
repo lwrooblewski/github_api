@@ -2,7 +2,7 @@
 import { css } from '@emotion/core';
 
 export const centerContentInColumn = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;

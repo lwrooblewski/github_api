@@ -12,16 +12,16 @@ function AppContent({ children }) {
 		<>
 			<Global
 				styles={css`
-          html,
-          body {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            background-color: ${theme.colors.background};
-            display: flex;
-            justify-content: center;
-          }
-`}
+					html,
+					body {
+						height: 100%;
+						width: 100%;
+						margin: 0;
+						background-color: ${theme.colors.background};
+						display: flex;
+						justify-content: center;
+					}
+				`}
 			/>
 			<Navigation routes={routes} />
 			<Container>{children}</Container>

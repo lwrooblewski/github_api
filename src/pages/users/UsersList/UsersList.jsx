@@ -1,25 +1,25 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { onUserListRender } from '@root/pages/users/UsersList/UsersList.actions';
-import UserRow from '../../../components/UserRow/UserRow';
+import { useDispatch, useSelector } from 'react-redux';
+import EndlessScroll from '@root/components/atoms/EndlessScroll/EndlessScroll';
+import { getUsersRowsReadyToRender, onUserListRender } from '@root/pages/users/UsersList/UsersList.actions';
 import { routesType } from '../../../types';
+import { selectUsers, usersInStoreAmountSelector } from '@root/store/selectors';
+import UserRow from '@root/components/UserRow/UserRow';
 
 function UsersList({ routes }) {
 	const dispatch = useDispatch();
+	const usersAmount = useSelector(usersInStoreAmountSelector);
+	const fetchedUsers = useSelector(selectUsers);
 	useEffect(() => {
-		onUserListRender(dispatch);
+		onUserListRender(dispatch, usersAmount);
 	}, []);
 
 	return (
-		<div>
-			<UserRow
-				avatarUrl="https://github.com/images/error/octocat_happy.gif"
-				followers={100}
-				following={200}
-				login="octocat"
-				singleUserRoute={routes.singleUser.url}
-			/>
-		</div>
+		<EndlessScroll onScrolledToEnd={() => console.log('end')}>
+			{getUsersRowsReadyToRender({ fetchedUsers, routes }).map((userData) => (
+				<UserRow key={userData.id} {...userData} />
+			))}
+		</EndlessScroll>
 	);
 }
 

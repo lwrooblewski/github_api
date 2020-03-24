@@ -1,11 +1,9 @@
-import { string } from 'prop-types';
-import { routesType } from '../index';
+import { number, oneOfType, string } from 'prop-types';
 
 const userRowPropTypes = {
-	avatarUrl: string.isRequired,
-	login: string.isRequired,
-	routes: routesType,
-	singleUserRoute: string.isRequired,
-};
+	avatarUrl: string,
+	login: string,
+	singleUserRoute: string,
+}.isRequired;
 
 export default userRowPropTypes;
