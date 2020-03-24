@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import { useTheme } from 'emotion-theming';
-import { Avatar, UserDataCol, Login, UserRowContainer } from './UserRow.components';
-import userRowPropTypes from '../../types/components/UserRow';
+import Avatar from "@root/components/atoms/Avatar";
+import { UserDataCol, Login, UserRowContainer } from './UserRow.components';
+import {userRowType} from '../../types/components';
 import { createLinkAddress } from '../../router/Router.actions';
 
-function UserRow({ avatarUrl, login, singleUserRoute }) {
+function UserRow({ avatarUrl, username, singleUserRoute }) {
 	const theme = useTheme();
 	return (
 		<UserRowContainer>
@@ -13,12 +14,12 @@ function UserRow({ avatarUrl, login, singleUserRoute }) {
 				<Avatar src={avatarUrl} />
 			</UserDataCol>
 			<UserDataCol>
-				<Login theme={theme}>{login}</Login>
+				<Login theme={theme}>{username}</Login>
 			</UserDataCol>
 			<UserDataCol>
 				<Link
 					to={createLinkAddress(singleUserRoute, {
-						id: login,
+						username,
 					})}
 				>
 					Details
@@ -29,7 +30,7 @@ function UserRow({ avatarUrl, login, singleUserRoute }) {
 }
 
 UserRow.propTypes = {
-	...userRowPropTypes,
+	...userRowType,
 };
 
 export default UserRow;
