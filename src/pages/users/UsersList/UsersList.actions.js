@@ -1,5 +1,5 @@
 import { requestUsersFetch } from '@root/store/actions';
-import { createLinkAddress } from '@root/router/Router.actions';
+import {getDataForUsersList} from "@root/pages/users/users.actions";
 
 export function fetchInitialUsers(dispatch) {
 	dispatch(requestUsersFetch());
@@ -16,12 +16,5 @@ export function onUserListRender(dispatch, usersAmount) {
 }
 
 export function getUsersRowsReadyToRender({ fetchedUsers, routes }) {
-	return fetchedUsers.map((user) => {
-		return {
-			id: user.get('id'),
-			avatarUrl: user.get('avatar_url'),
-			username: user.get('login'),
-			singleUserRoute: createLinkAddress(routes.singleUser.url, { id: user.get('login') }),
-		};
-	});
+	getDataForUsersList({ fetchedUsers, routes });
 }
