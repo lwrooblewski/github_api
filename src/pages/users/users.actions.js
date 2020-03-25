@@ -1,3 +1,4 @@
+/* eslint import/prefer-default-export: 0 */
 import { createLinkAddress } from '@root/router/Router.actions';
 
 export function getDataForUsersList({ fetchedUsers, routes }) {

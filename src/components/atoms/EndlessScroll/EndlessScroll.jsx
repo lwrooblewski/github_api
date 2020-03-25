@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { childrenType } from '@root/types';
-import { useIntersectionObserver } from '@root/utils/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@root/utils/hooks/useIntersectionObserver';
 import { Container, DataContainer } from './EndlessScroll.components';
 import Loading from '../Loading/Loading';
 

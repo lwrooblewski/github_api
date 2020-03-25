@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import routes from './routes';
-import { getRoutesArray } from './Router.actions';
 import { childrenType } from '@root/types';
+import { getRoutesArray } from './Router.actions';
+import routes from './routes';
 
 function Router({ children }) {
 	const routesArray = getRoutesArray(routes);
@@ -27,7 +27,7 @@ function Router({ children }) {
 }
 
 Router.propTypes = {
-	children: childrenType,
+	children: childrenType.isRequired,
 };
 
 export default Router;

@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row, InputGroup, FormControl } from 'react-bootstrap';
 import { useDebouncedCallback } from 'use-debounce';
-import { clearSearchResultsFromStore, getUsersRowsReadyToRender, onInputChange } from './UsersSearch.actions';
+import { useDispatch, useSelector } from 'react-redux';
 import UserRow from '@root/components/UserRow/UserRow';
 import { routesType } from '@root/types';
-import { useDispatch, useSelector } from 'react-redux';
 import {
 	selectSearchingRequestState,
 	selectSearchingResultsItems,
 	selectSearchingResultsTotalCount,
 } from '@root/store/selectors';
 import Loading from '@root/components/atoms/Loading/Loading';
+import { clearSearchResultsFromStore, getUsersRowsReadyToRender, onInputChange } from './UsersSearch.actions';
 
 const DEBOUNCE_TIME = 600;
 function UsersSearch({ routes }) {
+
 	const dispatch = useDispatch();
 	const [query, setQuery] = useState('');
 	const [isTyping, setIsTyping] = useState(false);
@@ -32,8 +33,8 @@ function UsersSearch({ routes }) {
 		setIsTyping(false);
 		if (query) onInputChange(username, dispatch);
 	}, DEBOUNCE_TIME);
-	const noResults = fetchedUsersTotalCount === 0;
 
+	const noResults = fetchedUsersTotalCount === 0;
 	const shouldDisplay = {
 		loading: isLoading,
 		results: !isTyping && !isLoading && fetchedUsers.size > 0,
@@ -67,6 +68,8 @@ function UsersSearch({ routes }) {
 					{shouldDisplay.loading && <Loading />}
 					{shouldDisplay.results
 						? getUsersRowsReadyToRender({ fetchedUsers, routes }).map((userData) => (
+								/* Disabling due to known properties of UserRow */
+								/* eslint-disable-next-line react/jsx-props-no-spreading */
 								<UserRow key={userData.id} {...userData} />
 						  ))
 						: null}
@@ -78,7 +81,7 @@ function UsersSearch({ routes }) {
 }
 
 UsersSearch.propTypes = {
-	router: routesType,
+	routes: routesType.isRequired,
 };
 
 export default UsersSearch;

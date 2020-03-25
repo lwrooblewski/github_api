@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '@root/components/atoms/Avatar';
-import { fetchSingleUserData, getUserDataRowsReadyToRender } from './UsersSingle.actions';
 import { selectSingleUserFromCache } from '@root/store/selectors';
 import Loading from '@root/components/atoms/Loading/Loading';
-import { UserSingleDataContainer } from './UsersSingle.components';
 import UserDataRow from '@root/components/UserDataRow/UserDataRow';
 import { isEvenNumber } from '@root/utils/helpers';
+import { UserSingleDataContainer } from './UsersSingle.components';
+import { fetchSingleUserData, getUserDataRowsReadyToRender } from './UsersSingle.actions';
 
 function UsersSingle() {
 	const { username } = useParams();

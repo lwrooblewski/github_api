@@ -26,8 +26,8 @@ function UsersList({ routes }) {
 	return (
 		<EndlessScroll onScrolledToEnd={appendNewUsers}>
 			{getUsersRowsReadyToRender({ fetchedUsers, routes }).map((userData) => (
-				{/* Disabling due to known properties of UserRow */}
-				{/* eslint-disable-next-line react/jsx-props-no-spreading */}
+				/* Disabling due to known properties of UserRow */
+				/* eslint-disable-next-line react/jsx-props-no-spreading */
 				<UserRow key={userData.id} {...userData} />
 			))}
 		</EndlessScroll>
