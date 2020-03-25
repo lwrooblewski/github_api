@@ -64,3 +64,37 @@ export function requestSingleUserFetchFailed({ error }) {
 		},
 	};
 }
+
+
+/**
+ * Search user
+ */
+export const REQUEST_USER_SEARCH_FETCH = 'REQUEST-USER-SEARCH-FETCH';
+export function requestUserSearchFetch({ username }) {
+	return {
+		type: REQUEST_USER_SEARCH_FETCH,
+		payload: {
+			username,
+		},
+	};
+}
+
+export const REQUEST_USER_SEARCH_FETCH_SUCCEEDED = 'REQUEST-USER-SEARCH-FETCH-SUCCEEDED';
+export function requestUserSearchFetchSucceeded({ matchedUsers }) {
+	return {
+		type: REQUEST_USER_SEARCH_FETCH_SUCCEEDED,
+		payload: {
+			matchedUsers,
+		},
+	};
+}
+
+export const REQUEST_USER_SEARCH_FETCH_FAILED = 'REQUEST-USER-SEARCH-FETCH-FAILED';
+export function requestUserSearchFetchFailed({ error }) {
+	return {
+		type: REQUEST_USER_SEARCH_FETCH_FAILED,
+		payload: {
+			error,
+		},
+	};
+}

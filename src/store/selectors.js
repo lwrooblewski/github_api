@@ -1,4 +1,4 @@
-import { List } from 'immutable';
+import {List, Map} from 'immutable';
 import { createSelector } from 'reselect';
 import { subStores } from '@root/store/reducers';
 
@@ -21,4 +21,17 @@ export const selectSingleUsersCache = (state) => {
 
 export const selectSingleUserFromCache = (username) => createSelector(selectSingleUsersCache, (items) => {
 	return items.get(username);
+});
+
+
+export const selectSearchingUserResults = (state) => {
+	return state.get(subStores.searching, Map());
+};
+
+export const selectSearchingResultsTotalCount = () => createSelector(selectSearchingUserResults, (items) => {
+	return items.get('totalCount');
+});
+
+export const selectSearchingResultsItems = () => createSelector(selectSearchingUserResults, (items) => {
+	return items.get('items');
 });

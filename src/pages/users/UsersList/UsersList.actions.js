@@ -16,5 +16,5 @@ export function onUserListRender(dispatch, usersAmount) {
 }
 
 export function getUsersRowsReadyToRender({ fetchedUsers, routes }) {
-	getDataForUsersList({ fetchedUsers, routes });
+	return getDataForUsersList({ fetchedUsers, routes });
 }

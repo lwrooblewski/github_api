@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import { Col, Row, InputGroup, FormControl } from 'react-bootstrap';
-import {getUsersRowsReadyToRender} from "./UsersSearch.actions";
+import { useDebouncedCallback } from 'use-debounce';
+import {getUsersRowsReadyToRender, onInputChange} from "./UsersSearch.actions";
 import UserRow from "@root/components/UserRow/UserRow";
-import EndlessScroll from "@root/components/atoms/EndlessScroll/EndlessScroll";
 import {routesType} from "@root/types";
+import {useDispatch} from "react-redux";
 
 function UsersSearch({ routes }) {
+	const dispatch = useDispatch();
+	const [debouncedOnInputChange] = useDebouncedCallback(
+		(username) => {
+			onInputChange(username, dispatch);
+		},
+		1000
+	);
+
 	return (
 		<Col>
 			<Row>
@@ -17,13 +26,14 @@ function UsersSearch({ routes }) {
 						placeholder="Username"
 						aria-label="Username"
 						aria-describedby="github-username"
+						onChange={(e) => debouncedOnInputChange(e.target.value)}
 					/>
 				</InputGroup>
-				<Row>
-					{getUsersRowsReadyToRender({ fetchedUsers, routes }).map((userData) => (
-						<UserRow key={userData.id} {...userData} />
-					))}
-				</Row>
+				{/*<Row>*/}
+				{/*	{getUsersRowsReadyToRender({ fetchedUsers, routes }).map((userData) => (*/}
+				{/*		<UserRow key={userData.id} {...userData} />*/}
+				{/*	))}*/}
+				{/*</Row>*/}
 			</Row>
 		</Col>
 	);
