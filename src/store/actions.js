@@ -80,11 +80,12 @@ export function requestUserSearchFetch({ username }) {
 }
 
 export const REQUEST_USER_SEARCH_FETCH_SUCCEEDED = 'REQUEST-USER-SEARCH-FETCH-SUCCEEDED';
-export function requestUserSearchFetchSucceeded({ matchedUsers }) {
+export function requestUserSearchFetchSucceeded({ totalCount, items }) {
 	return {
 		type: REQUEST_USER_SEARCH_FETCH_SUCCEEDED,
 		payload: {
-			matchedUsers,
+			totalCount,
+			items,
 		},
 	};
 }
@@ -95,6 +96,25 @@ export function requestUserSearchFetchFailed({ error }) {
 		type: REQUEST_USER_SEARCH_FETCH_FAILED,
 		payload: {
 			error,
+		},
+	};
+}
+
+
+export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
+export function clearSearchResults() {
+	return {
+		type: CLEAR_SEARCH_RESULTS,
+		payload: {},
+	};
+}
+
+export const SET_SEARCHING_REQUEST_STATE = 'SET-SEARCHING-REQUEST-STATE';
+export function setSearchingRequestState({ state }) {
+	return {
+		type: SET_SEARCHING_REQUEST_STATE,
+		payload: {
+			state
 		},
 	};
 }
