@@ -23,4 +23,4 @@ const useIntersectionObserver = (ref, { threshold = 0, root = null, rootMargin =
 	return inView;
 };
 
-export default  useIntersectionObserver;
+export default useIntersectionObserver;

@@ -14,7 +14,6 @@ import { clearSearchResultsFromStore, getUsersRowsReadyToRender, onInputChange }
 
 const DEBOUNCE_TIME = 600;
 function UsersSearch({ routes }) {
-
 	const dispatch = useDispatch();
 	const [query, setQuery] = useState('');
 	const [isTyping, setIsTyping] = useState(false);
