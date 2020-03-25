@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react';
 import { Spinner } from 'react-bootstrap';
-import { refType } from '@root/types';
 import { LoadingContainer } from './Loading.components';
 
 const Loading = forwardRef((props, ref) => {

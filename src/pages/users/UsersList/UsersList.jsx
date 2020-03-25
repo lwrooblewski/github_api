@@ -6,7 +6,7 @@ import {
 	getUsersRowsReadyToRender,
 	onUserListRender,
 } from '@root/pages/users/UsersList/UsersList.actions';
-import { routesType } from '../../../types';
+import { routesType } from '@root/types';
 import { selectUsers, usersInStoreAmountSelector } from '@root/store/selectors';
 import UserRow from '@root/components/UserRow/UserRow';
 
@@ -26,6 +26,8 @@ function UsersList({ routes }) {
 	return (
 		<EndlessScroll onScrolledToEnd={appendNewUsers}>
 			{getUsersRowsReadyToRender({ fetchedUsers, routes }).map((userData) => (
+				{/* Disabling due to known properties of UserRow */}
+				{/* eslint-disable-next-line react/jsx-props-no-spreading */}
 				<UserRow key={userData.id} {...userData} />
 			))}
 		</EndlessScroll>
@@ -33,7 +35,7 @@ function UsersList({ routes }) {
 }
 
 UsersList.propTypes = {
-	routes: routesType,
+	routes: routesType.isRequired,
 };
 
 export default UsersList;

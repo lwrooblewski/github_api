@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import userDataRowPropTypes from "@root/types/components/UserDataRow";
 
 function UserDataRow({ label, value }) {
 	return (
@@ -12,6 +13,6 @@ function UserDataRow({ label, value }) {
 	);
 }
 
-UserDataRow.propTypes = {};
+UserDataRow.propTypes = userDataRowPropTypes;
 
 export default UserDataRow;
