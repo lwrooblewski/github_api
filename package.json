@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"scripts": {
 		"commit": "git-cz",
-		"build": "webpack --config webpack.config.js",
+		"build": "webpack --config webpack.config.js --production",
 		"dev": "webpack-dashboard -- webpack-dev-server --config webpack.config.js",
 		"lint:eslint": "eslint src -c .eslintrc.json --ext js,jsx",
 		"lint:stylelint": "stylelint",
