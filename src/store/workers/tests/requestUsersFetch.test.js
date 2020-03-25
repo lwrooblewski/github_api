@@ -1,7 +1,7 @@
 import { REQUEST_USERS_FETCH_SUCCEEDED, requestUsersFetch, requestUsersFetchSucceeded } from '../../actions';
 import recordSaga from '../../../utils/tests/recordSaga';
 import fetchUsers from '../requestUsersFetch';
-import { usersResponseMock } from './mocks';
+import { storeMock, usersResponseMock } from './mocks';
 
 jest.mock('../../../utils/api/useApi', () =>
 	jest.fn(() => ({
@@ -20,7 +20,7 @@ jest.mock('../../../utils/api/useApi', () =>
 
 describe('should fetch from github api users collection', () => {
 	it('when REQUEST_USERS_FETCH action is dispatched', async () => {
-		const dispatched = await recordSaga(fetchUsers, requestUsersFetch({ since: 0 }));
+		const dispatched = await recordSaga(fetchUsers, requestUsersFetch({ since: 0 }), storeMock);
 		const requestFetchUsersAction = dispatched.find(({ type }) => type === REQUEST_USERS_FETCH_SUCCEEDED);
 		expect(requestFetchUsersAction).toEqual(
 			requestUsersFetchSucceeded({

@@ -35,7 +35,7 @@ function UsersList({ routes }) {
 }
 
 UsersList.propTypes = {
-	routes: routesType.isRequired,
+	routes: routesType,
 };
 
 export default UsersList;

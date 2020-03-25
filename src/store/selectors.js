@@ -6,6 +6,15 @@ export const selectUsers = (state) => {
 	return state.get(subStores.users, List());
 };
 
+export const selectUsersLastId = (state) => {
+	return (
+		state
+			.get(subStores.users, List())
+			.last()
+			?.get('id', 0) || 0
+	);
+};
+
 export const lastLoadedUserIdSelector = createSelector(selectUsers, (items) => {
 	return items.last()?.get('id', 0) || 0;
 });

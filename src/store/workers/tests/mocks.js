@@ -1,3 +1,5 @@
+import { fromJS, List, Map } from 'immutable';
+
 export const usersResponseMock = [
 	{
 		login: 'mojombo',
@@ -8,3 +10,7 @@ export const usersResponseMock = [
 		avatar_url: 'https://avatars0.githubusercontent.com/u/2?v=4',
 	},
 ];
+
+export const storeMock = Map({
+	users: List(fromJS(usersResponseMock)),
+});

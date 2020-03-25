@@ -22,6 +22,6 @@ export default function EndlessScroll({ children, onScrolledToEnd = () => {} }) 
 }
 
 EndlessScroll.propTypes = {
-	children: childrenType.isRequired,
+	children: childrenType,
 	onScrolledToEnd: PropTypes.func.isRequired,
 };

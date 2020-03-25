@@ -2,11 +2,13 @@
 
 exports[`renders correctly 1`] = `
 .emotion-0 {
-  margin-top: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .emotion-0 {
-  margin-top: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 <div
@@ -16,18 +18,6 @@ exports[`renders correctly 1`] = `
     className="nav nav-tabs nav-fill"
     onKeyDown={[Function]}
   >
-    <div
-      className="nav-item"
-    >
-      <a
-        aria-current="page"
-        className="nav-link active"
-        href="/"
-        onClick={[Function]}
-      >
-        Home
-      </a>
-    </div>
     <div
       className="nav-item"
     >

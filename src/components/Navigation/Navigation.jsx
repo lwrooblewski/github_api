@@ -23,7 +23,7 @@ function Navigation({ routes }) {
 }
 
 Navigation.propTypes = {
-	routes: routesType.isRequired,
+	routes: routesType,
 };
 
 export default Navigation;

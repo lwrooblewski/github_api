@@ -9,6 +9,7 @@
 				"extensions": [".js", "jsx"]
 			}
 		],
+		"react/require-default-props": 0,
 		"prettier/prettier": "error",
 		"max-len": ["error", 170],
 		"strict": 0

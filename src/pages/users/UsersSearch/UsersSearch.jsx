@@ -80,7 +80,7 @@ function UsersSearch({ routes }) {
 }
 
 UsersSearch.propTypes = {
-	routes: routesType.isRequired,
+	routes: routesType,
 };
 
 export default UsersSearch;

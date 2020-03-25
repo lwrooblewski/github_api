@@ -1,6 +1,7 @@
 import { routesWithComponentsToRender, routesMock } from './mocks';
 import { createLinkAddress, getRoutesArray } from '../Router.actions';
 
+jest.mock('@root/pages/home/index.js', () => {});
 describe('does function getRoutesArray', () => {
 	it('return array with urls and component to render inside router', () => {
 		const result = getRoutesArray(routesMock);

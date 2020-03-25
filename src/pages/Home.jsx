@@ -7,7 +7,7 @@ function Home({ routes }) {
 }
 
 Home.propTypes = {
-	routes: routesType.isRequired,
+	routes: routesType,
 };
 
 export default Home;
