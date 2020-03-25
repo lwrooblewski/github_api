@@ -1,8 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-	BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 import Navigation from '../Navigation';
 import routes from '../../../router/routes';
 

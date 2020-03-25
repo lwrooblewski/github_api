@@ -1,20 +1,16 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Row, InputGroup, FormControl } from 'react-bootstrap';
 import { useDebouncedCallback } from 'use-debounce';
-import {
-	clearSearchResultsFromStore,
-	getUsersRowsReadyToRender,
-	onInputChange
-} from "./UsersSearch.actions";
-import UserRow from "@root/components/UserRow/UserRow";
-import {routesType} from "@root/types";
-import {useDispatch, useSelector} from "react-redux";
+import { clearSearchResultsFromStore, getUsersRowsReadyToRender, onInputChange } from './UsersSearch.actions';
+import UserRow from '@root/components/UserRow/UserRow';
+import { routesType } from '@root/types';
+import { useDispatch, useSelector } from 'react-redux';
 import {
 	selectSearchingRequestState,
 	selectSearchingResultsItems,
-	selectSearchingResultsTotalCount
-} from "@root/store/selectors";
-import Loading from "@root/components/atoms/Loading/Loading";
+	selectSearchingResultsTotalCount,
+} from '@root/store/selectors';
+import Loading from '@root/components/atoms/Loading/Loading';
 
 const DEBOUNCE_TIME = 600;
 function UsersSearch({ routes }) {
@@ -32,13 +28,10 @@ function UsersSearch({ routes }) {
 		}
 	}, [query]);
 
-	const [debouncedOnInputChange] = useDebouncedCallback(
-		(username) => {
-			setIsTyping(false);
-			if (query) onInputChange(username, dispatch);
-		},
-		DEBOUNCE_TIME
-	);
+	const [debouncedOnInputChange] = useDebouncedCallback((username) => {
+		setIsTyping(false);
+		if (query) onInputChange(username, dispatch);
+	}, DEBOUNCE_TIME);
 	const noResults = fetchedUsersTotalCount === 0;
 
 	const shouldDisplay = {
@@ -63,7 +56,7 @@ function UsersSearch({ routes }) {
 						onChange={(e) => {
 							setQuery(e.target.value);
 							setIsTyping(true);
-							debouncedOnInputChange(e.target.value)
+							debouncedOnInputChange(e.target.value);
 						}}
 					/>
 				</InputGroup>
@@ -71,8 +64,12 @@ function UsersSearch({ routes }) {
 			<Row>
 				<Col>
 					{shouldDisplay.typing && <i>Typing...</i>}
-					{shouldDisplay.loading && <Loading/>}
-					{shouldDisplay.results ? getUsersRowsReadyToRender({ fetchedUsers, routes }).map((userData) => <UserRow key={userData.id} {...userData} />) : null}
+					{shouldDisplay.loading && <Loading />}
+					{shouldDisplay.results
+						? getUsersRowsReadyToRender({ fetchedUsers, routes }).map((userData) => (
+								<UserRow key={userData.id} {...userData} />
+						  ))
+						: null}
 					{shouldDisplay.noResults ? <i>No results found.</i> : null}
 				</Col>
 			</Row>

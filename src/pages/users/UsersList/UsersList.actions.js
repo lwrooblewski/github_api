@@ -1,5 +1,5 @@
 import { requestUsersFetch } from '@root/store/actions';
-import {getDataForUsersList} from "@root/pages/users/users.actions";
+import { getDataForUsersList } from '@root/pages/users/users.actions';
 
 export function fetchInitialUsers(dispatch) {
 	dispatch(requestUsersFetch());

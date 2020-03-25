@@ -1,4 +1,4 @@
-import {List, Map} from 'immutable';
+import { List, Map } from 'immutable';
 import { createSelector } from 'reselect';
 import { subStores } from '@root/store/reducers';
 
@@ -14,28 +14,30 @@ export const usersInStoreAmountSelector = createSelector(selectUsers, (items) =>
 	return items.size;
 });
 
-
 export const selectSingleUsersCache = (state) => {
 	return state.get(subStores.singleUsersCache, List());
 };
 
-export const selectSingleUserFromCache = (username) => createSelector(selectSingleUsersCache, (items) => {
-	return items.get(username);
-});
-
+export const selectSingleUserFromCache = (username) =>
+	createSelector(selectSingleUsersCache, (items) => {
+		return items.get(username);
+	});
 
 export const selectSearchingUserResults = (state) => {
 	return state.get(subStores.searching, Map());
 };
 
-export const selectSearchingResultsTotalCount = () => createSelector(selectSearchingUserResults, (results) => {
-	return results.get('totalCount', 0);
-});
+export const selectSearchingResultsTotalCount = () =>
+	createSelector(selectSearchingUserResults, (results) => {
+		return results.get('totalCount', 0);
+	});
 
-export const selectSearchingResultsItems = () => createSelector(selectSearchingUserResults, (results) => {
-	return results.get('items', Map());
-});
+export const selectSearchingResultsItems = () =>
+	createSelector(selectSearchingUserResults, (results) => {
+		return results.get('items', Map());
+	});
 
-export const selectSearchingRequestState = () => createSelector(selectSearchingUserResults, (results) => {
-	return results.get('requestPending', false);
-});
+export const selectSearchingRequestState = () =>
+	createSelector(selectSearchingUserResults, (results) => {
+		return results.get('requestPending', false);
+	});

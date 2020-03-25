@@ -1,9 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react';
 
-export const useIntersectionObserver = (
-	ref,
-	{ threshold = 0, root = null, rootMargin = '0%'} = {}
-) => {
+export const useIntersectionObserver = (ref, { threshold = 0, root = null, rootMargin = '0%' } = {}) => {
 	const [inView, setInView] = useState(false);
 	const observer = new IntersectionObserver(
 		([entry], observerInstance) => {
@@ -14,12 +11,12 @@ export const useIntersectionObserver = (
 			threshold,
 			root,
 			rootMargin,
-		}
+		},
 	);
 
 	useEffect(() => {
 		if (ref.current) {
-			observer.observe(ref.current)
+			observer.observe(ref.current);
 		}
 	});
 

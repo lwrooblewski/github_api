@@ -30,7 +30,6 @@ export function requestUsersFetchFailed({ error }) {
 	};
 }
 
-
 /**
  * Single user
  */
@@ -64,7 +63,6 @@ export function requestSingleUserFetchFailed({ error }) {
 		},
 	};
 }
-
 
 /**
  * Search user
@@ -100,7 +98,6 @@ export function requestUserSearchFetchFailed({ error }) {
 	};
 }
 
-
 export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
 export function clearSearchResults() {
 	return {
@@ -114,7 +111,7 @@ export function setSearchingRequestState({ state }) {
 	return {
 		type: SET_SEARCHING_REQUEST_STATE,
 		payload: {
-			state
+			state,
 		},
 	};
 }

@@ -4,7 +4,7 @@ export function getRoutesArray(routes) {
 		component,
 		url,
 		key,
-		exact
+		exact,
 	}));
 }
 
